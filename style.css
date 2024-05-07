@@ -1,0 +1,101 @@
+/* Color Theme Swatches in Hex */
+/* 
+.Wilderness-1-hex { color: #F2C063; }
+.Wilderness-2-hex { color: #A68549; }
+.Wilderness-3-hex { color: #F2B872; }
+.Wilderness-4-hex { color: #735736; }
+.Wilderness-5-hex { color: #40311E; } 
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a68549;
+  font-family: "Sunflower", sans-serif;
+  color: #f2b872;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #40311e;
+  width: 100vw;
+  padding: 1vh;
+  font-size: 2rem;
+}
+.content {
+  flex: 1;
+  /* padding-top:  */
+}
+
+.reset-container {
+  display: flex;
+  padding: 1vh;
+  gap: 1vw;
+}
+
+.number-squares {
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-family: "Sunflower", sans-serif;
+  font-weight: 300;
+  padding: 0.5vh;
+  background: #f2b872;
+  color: #40311e;
+}
+.reset-button {
+  padding: 0.5vh 2vw;
+  font-family: "Sunflower", sans-serif;
+  border: none;
+  border-radius: 12px;
+  transition: 0.3s;
+  background-color: #f2b872;
+  color: #40311e;
+}
+
+.reset-button:hover {
+  scale: 1.1;
+  background-color: #40311e;
+  color: #f2b872;
+}
+.grid-container {
+  display: flex;
+  height: auto;
+  width: auto;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  border: 1px solid red;
+  height: 60vw;
+  width: 60vw;
+}
+
+.grid-square {
+  flex: 1;
+  /* height: 20px;
+  width: 20px; */
+  border-radius: 4px;
+  background-color: #f2c063;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  padding: 1vh 2vw;
+  background-color: #735736;
+  width: 100vw;
+}
+.hidden {
+  display: none;
+}
