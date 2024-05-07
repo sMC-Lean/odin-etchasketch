@@ -8,14 +8,19 @@ function generateGrid() {
   gridContainer.innerHTML = "";
   const numberSquares = getNumberSquares();
   const squaresPerSide = Math.sqrt(numberSquares);
-
+  const squareSize = 100 / squaresPerSide;
   for (let i = 0; i < squaresPerSide; i++) {
     const newRowDiv = document.createElement("div");
     newRowDiv.classList.add("grid-row");
+    newRowDiv.style.height = `${squareSize}%`;
+    newRowDiv.style.display = "flex";
+
     for (let i = 0; i < squaresPerSide; i++) {
       const newSquareDiv = document.createElement("div");
       newSquareDiv.classList.add("grid-square");
-      newSquareDiv.style.height = newSquareDiv.style.width = `25%`;
+      newSquareDiv.style.width = `${squareSize}%`;
+      newSquareDiv.textContent = "";
+      newSquareDiv.innerHTML = `<div class="grid-square-bg>""</div>`;
       newRowDiv.appendChild(newSquareDiv);
     }
     gridContainer.appendChild(newRowDiv);
@@ -30,7 +35,13 @@ function getNumberSquares() {
 function changeGridSquare(event) {
   if (event.target.classList.contains("grid-square")) {
     const currSquare = event.target;
-    currSquare.style.backgroundColor = "#735736";
+    const currOpacity = window
+      .getComputedStyle(currSquare)
+      .getPropertyValue("opacity");
+    if (currOpacity > 0) {
+      currSquare.style.opacity = currOpacity - 0.15;
+      console.log();
+    }
   }
 }
 
